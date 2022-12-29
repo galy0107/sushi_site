@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Make a Reservation</title>
+    <style>
+      body {
+        background-image: url('shibuya.jpg');
+        background-size: cover;
+        color: white;
+        font-family: 'Arial', sans-serif;
+      }
+      .reservation-form {
+        margin: 50px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .reservation-form h1 {
+        margin-bottom: 30px;
+      }
+      .reservation-form label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .reservation-form input, .reservation-form select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid lightgray;
+        border-radius: 4px;
+      }
+      .reservation-form input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+      .reservation-form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reservation-form">
+      <h1>Make a Reservation</h1>
+      <form action="/reservation" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="time">Time:</label>
+        <select id="time" name="time" required>
+          <option value="6:00pm">6:00pm</option>
+          <option value="6:30pm">6:30pm</option>
+          <option value="7:00pm">7:00pm</option>
+          <option value="7:30pm">7:30pm</option>
+          <option value="8:00pm">8:00pm</option>
+          <option value="8:30pm">8:30pm</option>
+          <option value="9:00pm">9:00pm</option>
+          <option value="9:30pm">9:30pm</option>
+        </select>
+        <label for="party-size">Party Size:</label>
+        <input type="number" id="party-size" name="party-size" min="1" required>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
